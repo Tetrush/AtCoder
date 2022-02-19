@@ -26,7 +26,7 @@ int main(void){
                 ans[i][j] += a[i][y];
                 y++;
             }
-            while(x<h){
+            while(x<w){
                 ans[i][j] += a[x][j];
                 x++;
             }
@@ -36,7 +36,7 @@ int main(void){
 
     for(i=0;i<h;i++){
         for(j=0;j<w;j++){
-            printf("%2d ",ans[i][j]);
+            printf("%d ",ans[i][j]);
         }
         printf("\n");
     }

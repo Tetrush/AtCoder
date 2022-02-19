@@ -12,6 +12,22 @@ int binary_minus(int *s,int i){
     return 0;
 }
 
+//配列i番目以降を1こずつ後ろにずらす。
+int shiftarray(int *s,int i){
+    int temp;
+    int j;
+    j=i;
+    while(s[j+1]!='\x0'){
+        temp=s[j+1];
+        s[j+1]=s[j];
+        j++;
+    }
+    s[j+1]=s[j];
+    s[j+2]='\x0';
+
+    return 0;
+}
+
 //マージソート
 void merge_sort (int array[], int left, int right) {
     int i, j, k, mid;
