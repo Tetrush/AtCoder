@@ -13,7 +13,7 @@ int binary_minus(int *s,int i){
 }
 
 //配列i番目以降を1こずつ後ろにずらす。
-int shiftarray(int *s,int i){
+int shiftArray(int *s,int i){
     int temp;
     int j;
     j=i;
@@ -67,3 +67,6 @@ int main(void){
 
     return 0;
 }
+
+//とても長いintの宣言
+ long long int x,y,z;
