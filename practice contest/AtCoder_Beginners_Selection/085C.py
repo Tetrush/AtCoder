@@ -1,6 +1,8 @@
 # coding: utf-8
-n = int(input())
-y = int(input())
+# AC at 2022.02.22
+n,y = input('').split()
+n = int(n)
+y = int(y)
  
 a = b = c = 0;
  
@@ -13,4 +15,4 @@ while a <= n:
         b += 1
     a += 1
     b = 0
-print("No")
+print("-1 -1 -1")
