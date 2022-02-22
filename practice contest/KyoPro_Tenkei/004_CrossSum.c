@@ -1,4 +1,5 @@
 // AC at 2022.02.22
+// https://atcoder.jp/contests/typical90/tasks/typical90_d
 
 #include <stdio.h>
  

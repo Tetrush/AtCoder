@@ -1,3 +1,7 @@
+// AC
+// https://atcoder.jp/contests/abc240/tasks/abc240_b
+
+
 #include <stdio.h>
 
 void merge_sort (int array[], int left, int right) {

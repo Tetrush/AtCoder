@@ -1,3 +1,6 @@
+// AC
+// https://atcoder.jp/contests/abc240/tasks/abc240_a
+
 #include <stdio.h>
 
 int main(void){

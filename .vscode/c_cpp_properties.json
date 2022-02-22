@@ -13,11 +13,11 @@
             "cStandard": "c17",
             "cppStandard": "c++17",
             "intelliSenseMode": "windows-gcc-x64",
-            "compilerPath": "C:\\mingw64\\bin\\gcc.exe",
+            "compilerPath": "C:\\gcc\\mingw64\\bin\\gcc.exe",
             "compilerArgs": [
                 "gcc"
             ]
         }
     ],
     "version": 4
-}
+} 

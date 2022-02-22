@@ -1,3 +1,6 @@
+// AC
+// https://atcoder.jp/contests/abc239/tasks/abc239_b
+
 #include <stdio.h>
 #include <math.h>
 

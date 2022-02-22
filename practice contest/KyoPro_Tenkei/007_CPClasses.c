@@ -1,4 +1,5 @@
-// AC at 2022.02.22
+// 
+// https://atcoder.jp/contests/typical90/tasks/typical90_g
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -25,7 +26,8 @@ void merge_sort (int array[], int left, int right) {
 int main(void){
     int a[300001];
     int b[300001];
-    int n,q,i,j,pt,last;
+    int n,q,i,j;
+    int lmin,lmax,pt,last;
 
     scanf("%d",&n);
     for(i=0;i<n;i++){
@@ -37,40 +39,45 @@ int main(void){
     }
 
     merge_sort(a,0,n-1);
-//    for(i=0;i<n;i++){printf("%d,",a[i]);}
-
+    int x = 0;
     for(i=0;i<q;i++){
         pt = 1999999999;
         j = n/2;
         last = -1;
-        while(j>=0 && j<n){
+        lmin = 0;lmax = n;
+/*
+        while(x<5){
             if(abs(a[j]-b[i]) > pt){
-                if(a[j]>b[i]){
-                    if(last == (j-1)){
-                        break;
-                    }
-                    last=j;
-                    j--;
+                last = j;
+                if(a[j] > b[i]){
+                    j = (j+lmin)/2;
                 }else{
-                    if(last == j+1){
-                        break;
-                    }
-                    last=j;
-                    j++;
+                    j = (j+lmax)/2;
+                }
+                if(j==last){
+                    break;
                 }
             }else{
                 pt = abs(a[j]-b[i]);
                 last = j;
-                if(a[j]>b[i]){
-                    last=j;
-                    j--;
+                if(a[j] > b[i]){
+                    j = (j+lmin)/2;
                 }else{
-                    last=j;
-                    j++;
+                    j = (j+lmax)/2;
+                }
+                if(j==last){
+                    break;
                 }
             }
+            if(j<lmin){
+                lmin = j;
+            }else if(j>lmax){
+                lmax = j;
+            }
+            x++;
         }
         printf("%d\n",pt);
+*/
     }
 
     return 0;
