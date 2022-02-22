@@ -37,22 +37,37 @@ int main(void){
     }
 
     merge_sort(a,0,n-1);
+//    for(i=0;i<n;i++){printf("%d,",a[i]);}
 
     for(i=0;i<q;i++){
         pt = 1999999999;
         j = n/2;
-        last = 0;
+        last = -1;
         while(j>=0 && j<n){
             if(abs(a[j]-b[i]) > pt){
-                if(last == (j+1)){
-                    break;
+                if(a[j]>b[i]){
+                    if(last == (j-1)){
+                        break;
+                    }
+                    last=j;
+                    j--;
+                }else{
+                    if(last == j+1){
+                        break;
+                    }
+                    last=j;
+                    j++;
                 }
-                last=j;
-                j++;
             }else{
                 pt = abs(a[j]-b[i]);
                 last = j;
-                j--;
+                if(a[j]>b[i]){
+                    last=j;
+                    j--;
+                }else{
+                    last=j;
+                    j++;
+                }
             }
         }
         printf("%d\n",pt);
