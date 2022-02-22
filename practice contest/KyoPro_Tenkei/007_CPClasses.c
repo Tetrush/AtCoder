@@ -1,6 +1,6 @@
-// 
+// AC 2022.2.23
 // https://atcoder.jp/contests/typical90/tasks/typical90_g
-
+ 
 #include <stdio.h>
 #include <stdlib.h>
  
@@ -22,13 +22,13 @@ void merge_sort (int array[], int left, int right) {
         }
     }
 }
-
+ 
 int main(void){
     int a[300001];
     int b[300001];
     int n,q,i,j;
-    int lmin,lmax,pt,last;
-
+    int jmin,jmax,pt,last,last2;
+ 
     scanf("%d",&n);
     for(i=0;i<n;i++){
         scanf("%d",&a[i]);
@@ -37,48 +37,40 @@ int main(void){
     for(i=0;i<q;i++){
         scanf("%d",&b[i]);
     }
-
+ 
     merge_sort(a,0,n-1);
-    int x = 0;
+    int x;
     for(i=0;i<q;i++){
-        pt = 1999999999;
+        pt = abs(a[n/2]-b[i]);
         j = n/2;
-        last = -1;
-        lmin = 0;lmax = n;
-/*
-        while(x<5){
-            if(abs(a[j]-b[i]) > pt){
-                last = j;
-                if(a[j] > b[i]){
-                    j = (j+lmin)/2;
-                }else{
-                    j = (j+lmax)/2;
-                }
-                if(j==last){
-                    break;
-                }
+        last = -1;last2 = -1;
+        jmin = 0;jmax = n-1;
+        x=0;
+        while(jmax-jmin!=1 && j!=n-1 && j!=0){
+            //printf("b[%d]:%d a[%d]:%d\n",i,b[i],j,a[j]);
+            if(b[i]>a[j]){
+                jmin = j;
+                j = (j+jmax+1)/2;
             }else{
-                pt = abs(a[j]-b[i]);
-                last = j;
-                if(a[j] > b[i]){
-                    j = (j+lmin)/2;
-                }else{
-                    j = (j+lmax)/2;
-                }
-                if(j==last){
-                    break;
-                }
+                jmax = j;
+                j = (j+jmin+1)/2;
             }
-            if(j<lmin){
-                lmin = j;
-            }else if(j>lmax){
-                lmax = j;
-            }
-            x++;
+            //printf("jmax:%d jmin:%d\n",jmax,jmin);
         }
-        printf("%d\n",pt);
-*/
+        //printf("FINAL:b[%d]:%d a[%d]:%d\n",i,b[i],j,a[j]);
+        if(j!=0){
+            if(abs(a[j]-b[i]) > abs(a[j-1]-b[i])){
+                printf("%d\n",abs(a[j-1]-b[i]));
+            }else{
+                printf("%d\n",abs(a[j]-b[i]));
+            }
+        }else{
+            printf("%d\n",abs(a[j]-b[i]));
+        }
+ 
+        //printf("%d:%d\n",i,x);
+ 
     }
-
+ 
     return 0;
 }
