@@ -1,2 +1,6 @@
 .vscode/
 *.exe
+*.json
+.gitignore
+practice contest/Typical90/tempCodeRunnerFile.c
+lysithea.js
