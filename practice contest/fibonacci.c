@@ -14,6 +14,6 @@ int main(void){
     int n,f;
     scanf("%d",&n);
     f = fibonacci(n);
-    printf("f(%d) = %d\n",n,f);
+    printf("%d\n",n,f);
     return 0;
 }
